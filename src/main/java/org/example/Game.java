@@ -44,14 +44,12 @@ public class Game {
     }
 
     int menu() {
-        while (true) {
-            int size = ConsoleRenderer.renderMenu();
-            if (size > 0 && size < 10) {
-                field.setSize(size);
-                return 1;
-            } else {
-                return -1;
-            }
+        int size = ConsoleRenderer.renderMenu();
+        if (size > 0 && size < 10) {
+            field.setSize(size);
+            return 1;
+        } else {
+            return -1;
         }
     }
 

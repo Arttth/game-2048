@@ -1,7 +1,6 @@
 package org.example;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Random;
 
 public class Field {
@@ -33,9 +32,6 @@ public class Field {
         }
     }
 
-    public void setStartBlockCount(int startBlockCount) {
-        this.startBlockCount = startBlockCount;
-    }
 
     void setBlock(int i, int j, int value) {
         blocks[i][j].setValue(value);
@@ -79,7 +75,7 @@ public class Field {
 
 
     // size-2 - penultimate column
-    Block[][] actRight() {
+    void actRight() {
         for (int i = 0; i < size; i++) {
             for (int j = size-2; j >= 0; j--) {
                 int curValue = blocks[i][j].getValue();
@@ -107,10 +103,9 @@ public class Field {
                 }
             }
         }
-        return blocks;
     }
 
-    Block[][] actLeft() {
+    void actLeft() {
         for (int i = 0; i < size; i++) {
             for (int j = 1; j < size; j++) {
                 int curValue = blocks[i][j].getValue();
@@ -138,10 +133,9 @@ public class Field {
                 }
             }
         }
-        return blocks;
     }
 
-    Block[][] actUp() {
+    void actUp() {
         for (int i = 1; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 int curValue = blocks[i][j].getValue();
@@ -169,10 +163,9 @@ public class Field {
                 }
             }
         }
-        return blocks;
     }
 
-    Block[][] actDown() {
+    void actDown() {
         for (int i = size-2; i >= 0; i--) {
             for (int j = 0; j < size; j++) {
                 int curValue = blocks[i][j].getValue();
@@ -200,6 +193,5 @@ public class Field {
                 }
             }
         }
-        return blocks;
     }
 }

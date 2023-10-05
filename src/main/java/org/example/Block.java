@@ -2,7 +2,7 @@ package org.example;
 
 public class Block {
     final static int emptyBlock = 0;
-    int value = 0;
+    int value;
 
     public void setValue(int value) {
         this.value = value;

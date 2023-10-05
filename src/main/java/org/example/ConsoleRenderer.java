@@ -2,11 +2,9 @@ package org.example;
 
 import java.util.Scanner;
 
-import org.example.Action.*;
-
 // print 2048 in console
 public class ConsoleRenderer {
-    private static Scanner scanner = new Scanner(System.in);
+    private final static Scanner scanner = new Scanner(System.in);
     // print field
     public static void renderField(Field field) {
         Block[][] blocks = field.getField();
@@ -14,9 +12,9 @@ public class ConsoleRenderer {
             for (int j = 0; j < field.size; ++j) {
                 System.out.print(blocks[i][j].getValue() + " ");
             }
-            System.out.println("");
+            System.out.println(" ");
         }
-        System.out.println("");
+        System.out.println(" ");
     }
 
     // print interface
@@ -32,8 +30,7 @@ public class ConsoleRenderer {
         int input = scanner.nextInt();
         final Action[] actions = Action.values();
         try {
-            Action action = actions[input];
-            return action;
+            return actions[input];
         } catch (IndexOutOfBoundsException ex) {
             System.out.println("------------------");
             System.out.println("Неправильное ввод!!!");
@@ -48,9 +45,7 @@ public class ConsoleRenderer {
 
     public static int renderMenu() {
         System.out.println("Выберите размер поля:");
-        int size = scanner.nextInt();
-
-        return size;
+        return scanner.nextInt();
     }
 
 }
